@@ -27,11 +27,13 @@ function setup() {
 }
 
 function draw() {
+  //Changing the value of the background color variables according to the position of the circle.
   backcol.r = map(circleX, 0, 400, 0, 255);
   backcol.b = map(circleY, 0, 400, 0, 255);
   circlecol.r = map(mouseX, 0, 400, 0, 255);
   circlecol.g = map(mouseY, 0, 400, 0, 255);
-
+  
+  //Changing the speed value of the circle randomly
   if (circleX >= width) {
     goX = -1 * random(0, 5);
   } else if (circleX <= 0) {
