@@ -1,6 +1,6 @@
 /*
 This program is almost the same as multipleCanvas.js. The only difference is there are no dots and the background color
- is changing according to the position of the cursor.
+ is changing according to the position of the cursor.(The square doesn't leave trails behind)
 */
 var secondCanvas;
 var thirdCanvas;
