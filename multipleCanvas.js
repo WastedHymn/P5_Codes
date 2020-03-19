@@ -13,6 +13,7 @@ function setup() {
 }
 
 function draw() {
+// Square doesn't leave trails because background function continuously is called
   background(255);
   x += random(-5, 5);
   y += random(-5, 5);
