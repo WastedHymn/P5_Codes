@@ -1,0 +1,54 @@
+/*
+The program draws a circle that bounds from edges of the canvas(The circle doesn't leave trails behind). The background color changes as the circle changes its position.
+The color of the circle depends on the position of the cursor.
+*/
+var secondCanvas;
+var circleX = 50;
+var circleY = 50;
+var goX = 5;
+var goY = 5;
+var backcol = {
+  r: 255,
+  g: 0,
+  b: 0
+};
+var circlecol = {
+  r: 255,
+  g: 0,
+  b: 0
+};
+
+
+function setup() {
+  createCanvas(400, 400);
+  secondCanvas = createGraphics(400, 400);
+  secondCanvas.clear();
+  background(220);
+}
+
+function draw() {
+  backcol.r = map(circleX, 0, 400, 0, 255);
+  backcol.b = map(circleY, 0, 400, 0, 255);
+  circlecol.r = map(mouseX, 0, 400, 0, 255);
+  circlecol.g = map(mouseY, 0, 400, 0, 255);
+
+  if (circleX >= width) {
+    goX = -1 * random(0, 5);
+  } else if (circleX <= 0) {
+    goX = random(0, 5);
+  }
+  if (circleY >= height) {
+    goY = -1 * random(0, 5);
+  } else if (circleY <= 0) {
+    goY = random(0, 5);
+  }
+
+  circleX += goX;
+  circleY += goY;
+  background(backcol.r, 0, backcol.b);
+  secondCanvas.fill(circlecol.r, 0, backcol.b);
+  secondCanvas.circle(circleX, circleY, 30);
+  image(secondCanvas, 0, 0);
+  secondCanvas.clear();
+  image(secondCanvas, 0, 0);
+}
