@@ -1,5 +1,5 @@
 /*
-The program draws a circle that bounds from edges of the canvas. The background color changes as the circle changes its position.
+The program draws a circle that bounds from edges of the canvas(The circle leaves trails behind). The background color changes as the circle changes its position.
 The color of the circle depends on the position of the cursor.
 */
 var secondCanvas;
